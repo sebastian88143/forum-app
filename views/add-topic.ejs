@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Beginner's Programming Forum</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/topics">Topics</a></li>
+                <li><a href="/users">Users</a></li>
+                <% if (user) { %>
+                    <li><a href="/user-profile/<%= user.id %>">User Profile</a></li>
+                    <li><a href="/logout">Log Out</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="add-topic-container">
+            <h2>Add Topic</h2>
+            <form action="/topics" method="post">
+                <input type="text" name="name" placeholder="Topic Name" required>
+                <textarea name="description" placeholder="Topic Description" required></textarea>
+                <button type="submit">Add Topic</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>© 2023 Beginner's Programming Forum</p>
+    </footer>
+</body>
+
+</html>

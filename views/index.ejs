@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Beginner's Programming Forum</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/topics">Topics</a></li>
+                <li><a href="/users">Users</a></li>
+                <% if (user) { %>
+                    <li><a href="/user-profile/<%= user.id %>">User Profile</a></li>
+                    <li><a href="/logout">Log Out</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Welcome to the Beginner's Programming Forum</h1>
+        <p>Here you can share knowledge, ask questions, and participate in discussions.</p>
+    </main>
+    <% if (!user) { %>
+        <div class="login-container">
+            <h2>Login</h2>
+            <form action="/login" method="post">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+        <div class="registration-container">
+            <h2>Registration</h2>
+            <form action="/register" method="post">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                <textarea name="bio" placeholder="About Yourself"></textarea>
+                <input type="text" name="avatar_url" placeholder="Avatar URL">
+                <button type="submit">Register</button>
+            </form>
+        </div>
+        <% } else { %>
+            <p>Welcome, <%= user.username %>!</p>
+        <% } %>
+    <footer>
+        <p>© 2023 Beginner's Programming Forum</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Beginner's Programming Forum</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/topics">Topics</a></li>
+                <li><a href="/users">Users</a></li>
+                <% if (user) { %>
+                    <li><a href="/user-profile/<%= user.id %>">User Profile</a></li>
+                    <li><a href="/logout">Log Out</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Topics</h1>
+        <a href="/add-topic" class="add-topic-button">Add New Topic</a>
+        <div class="topic-list">
+            <% topics.forEach(function(topic) { %>
+                <div class="topic-item">
+                    <h2><a href="/topics/<%= topic.id %>">
+                            <%= topic.name %>
+                        </a></h2>
+                    <p>
+                        <%= topic.description %>
+                    </p>
+                </div>
+            <% }); %>
+        </div>
+    </main>
+    <footer>
+        <p>© 2023 Beginner's Programming Forum</p>
+    </footer>
+</body>
+
+</html>

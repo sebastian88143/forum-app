@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Beginner's Programming Forum</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/topics">Topics</a></li>
+                <li><a href="/users">Users</a></li>
+                <% if (user) { %>
+                    <li><a href="/user-profile/<%= user.id %>">User Profile</a></li>
+                    <li><a href="/logout">Log Out</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Posts</h1>
+        <a href="/add-post/<%= topic.id %>" class="add-post-button">Add New Post</a>
+        <div class="posts-list">
+            <% posts.forEach(function(post) { %>
+                <div class="post-item">
+                    <h2>
+                        <%= post.title %>
+                    </h2>
+                    <p>
+                        <%= post.content %>
+                    </p>
+                    <% if (user && user.id === post.user_id) { %>
+                        <a href="/delete-post/<%= topic.id %>/<%= post.id %>" class="delete-post-button">Delete Post</a>
+                    <% } %>
+                    <!-- Reply Section -->
+                    <div class="replies">
+                        <% post.replies.forEach(function(reply) { %>
+                            <div class="reply">
+                              <p><strong><%= reply.username %>:</strong> <%= reply.content %></p>
+                              <% if (user && user.id === reply.user_id) { %>
+                                <a href="/delete-reply/<%= reply.id %>" class="delete-reply-button">Delete Reply</a>
+                              <% } %>
+                            </div>
+                        <% }); %>
+                        <div class="add-topic-container">
+                            <!-- Form for adding replies -->
+                            <form action="/add-reply" method="post">
+                                <input type="hidden" name="post_id" value="<%= post.id %>">
+                                <input type="hidden" name="topic_id" value="<%= topic.id %>">
+                                <textarea name="content" placeholder="Write a reply..." required></textarea>
+                                <button type="submit">Send Reply</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </main>
+    <footer>
+        <p>© 2023 Beginner's Programming Forum</p>
+    </footer>
+</body>
+
+</html>

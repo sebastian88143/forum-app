@@ -1,0 +1,269 @@
+body {
+  font-family: 'Courier New', monospace;
+  background-color: #1e1e1e;
+  color: #dcdcdc;
+}
+
+header, footer {
+  background-color: #252526;
+  padding: 20px 0;
+}
+
+nav ul li {
+  margin-right: 30px;
+}
+
+nav ul li a {
+  color: #4fa8f6;
+}
+
+.topic-list {
+  margin: 20px 5%;
+}
+
+.topic-item {
+  background-color: #2d2d30;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-left: 5px solid #4fa8f6;
+}
+
+.topic-item h2 {
+  color: #9cdcfe;
+}
+
+.login-container {
+  background-color: #2d2d30;
+  padding: 20px;
+  width: 300px; /* lub inna szerokość w zależności od preferencji */
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* centruje tekst i elementy formularza */
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+}
+
+.login-container input,
+.login-container button {
+  width: calc(100% - 20px); /* Odejmuje padding z szerokości */
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Dodaje padding do całkowitej szerokości/wysokości */
+}
+
+.login-container button {
+  color: white;
+  background-color: #4fa8f6;
+  border: none; /* Usuwa domyślną ramkę */
+  cursor: pointer;
+}
+
+.registration-container {
+  background-color: #2d2d30;
+  padding: 20px;
+  width: 300px; /* lub inna szerokość w zależności od preferencji */
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* centruje tekst i elementy formularza */
+}
+
+.registration-container h2 {
+  margin-bottom: 20px;
+}
+
+.registration-container input,
+.registration-container button {
+  width: calc(100% - 20px); /* Odejmuje padding z szerokości */
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Dodaje padding do całkowitej szerokości/wysokości */
+}
+
+.registration-container textarea {
+  width: calc(100% - 20px);
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.registration-container button {
+  color: white;
+  background-color: #4fa8f6;
+  border: none; /* Usuwa domyślną ramkę */
+  cursor: pointer;
+}
+
+.add-topic-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 15px;
+  background-color: #4fa8f6;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.add-topic-button:hover {
+  background-color: #3a97d4;
+}
+
+.add-topic-container {
+  background-color: #2d2d30;
+  padding: 20px;
+  width: 300px; /* lub inna szerokość w zależności od preferencji */
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* centruje tekst i elementy formularza */
+}
+
+.add-topic-container h2 {
+  margin-bottom: 20px;
+}
+
+.add-topic-container input,
+.add-topic-container button {
+  width: calc(100% - 20px); /* Odejmuje padding z szerokości */
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Dodaje padding do całkowitej szerokości/wysokości */
+}
+
+.add-topic-container button {
+  color: white;
+  background-color: #4fa8f6;
+  border: none; /* Usuwa domyślną ramkę */
+  cursor: pointer;
+}
+
+.add-topic-container textarea {
+  width: calc(100% - 20px);
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.posts-list {
+  margin: 20px 5%;
+}
+
+.post-item {
+  background-color: #2d2d30;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-left: 5px solid #9cdcfe;
+}
+
+.post-item h2 {
+  color: #4fa8f6;
+}
+
+.post-item p {
+  color: #dcdcdc;
+}
+
+.add-post-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 15px;
+  background-color: #4fa8f6;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.add-post-button:hover {
+  background-color: #3a97d4;
+}
+
+.delete-post-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #d9534f; /* czerwony kolor */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.delete-post-button:hover {
+  background-color: #c9302c; /* ciemniejszy czerwony przy najechaniu */
+}
+
+.replies {
+  margin-top: 15px;
+  background-color: #262626;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.reply {
+  padding: 5px;
+  border-bottom: 1px solid #333;
+}
+
+.reply:last-child {
+  border-bottom: none;
+}
+
+.reply p {
+  margin: 5px 0;
+  color: #dcdcdc;
+}
+
+form.reply-form {
+  margin-top: 10px;
+}
+
+form.reply-form textarea {
+  width: calc(100% - 20px);
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form.reply-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4fa8f6;
+  color: white;
+  cursor: pointer;
+}
+
+.delete-reply-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #d9534f; /* czerwony kolor */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.delete-reply-button:hover {
+  background-color: #c9302c; /* ciemniejszy czerwony przy najechaniu */
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User List</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/topics">Topics</a></li>
+                <li><a href="/users">Users</a></li>
+                <% if (user) { %>
+                    <li><a href="/user-profile/<%= user.id %>">User Profile</a></li>
+                    <li><a href="/logout">Log Out</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Users</h1>
+    <ul>
+        <% users.forEach(function(user) { %>
+            <li>
+                <%= user.username %>
+            </li>
+        <% }); %>
+    </ul>
+
+    <footer>
+        <p>© 2023 Beginner's Programming Forum</p>
+    </footer>
+</body>
+
+</html>
